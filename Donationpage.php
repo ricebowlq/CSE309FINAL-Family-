@@ -23,8 +23,8 @@
           <!-- <li><a href="#">ORGANIZATIONS</a></li> -->
           
           <li><a href="Donationpage.php">DONATE</a></li>
-          <li><a href="#vdo">ABOUT US</a></li>
-          <li><a href="#c-us">CONTACT US</a></li>
+          <li><a href="child-adoptation-home.php#vdo">ABOUT US</a></li>
+          <li><a href="child-adoptation-home.php#c-us">CONTACT US</a></li>
           
 
         </ul>
