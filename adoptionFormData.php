@@ -25,6 +25,7 @@ include('dbconnection.php');
     </style>
 </head>
 <body>
+    <!--ADOPTION FORM DATA TABLE-->
     <div class="container my-5">
         <table class="table">
             <thead class="table-dark">
@@ -98,6 +99,9 @@ include('dbconnection.php');
             </tbody>
         </table>
     </div>
+
+    <!--CONTACT FORM DATA TABLE-->
+
 
     <div class="container">
         <button class="btn btn-dark btn-lg"><a href="orgHomePage.php" class="text-decoration-none">BACK</a></button>

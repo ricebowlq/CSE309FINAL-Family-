@@ -1,3 +1,27 @@
+<!--PHP CODE FOR WRITING INTO CONTACT US FORM DB-->
+<?php
+$con = mysqli_connect("localhost", "root", "", "final_db");
+
+if(isset($_POST['submitcontactform'])){
+  $fname = $_POST["firstname"];
+  $lname = $_POST["lastname"];
+  $email = $_POST["email"];
+  $message = $_POST["subject"];
+
+  $query= "INSERT INTO `contactusform`(`First Name`, `Last Name`, `Email`, `Message`, `Id`) VALUES ('$fname','$lname','$email','$message','')";
+  $query_run = mysqli_query($con, $query);
+
+  if($query_run){
+    echo "<script>alert('Form Sent');</script>";
+    // header('location:displayChildrenList2.php');
+  }
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -96,8 +120,11 @@
 <br>
 <h1 class="g-title" id="c-us">Contact us</h1>
 <br>
+
+
+<!-- CONTACT US FORM -->
 <div class="container" >
-  <form action="action_page.php">
+  <form method="POST">
 
     <label for="fname">First Name</label>
     <input type="text" id="fname" name="firstname" placeholder="Your name..">
@@ -105,13 +132,13 @@
     <label for="lname">Last Name</label>
     <input type="text" id="lname" name="lastname" placeholder="Your last name..">
     <label for="lname">Email</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your email..">
+    <input type="text" id="lname" name="email" placeholder="Your email..">
 
     <label for="subject">Write text</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
 
     <div class="cus-btn">
-      <button>Submit</button>
+      <button type="submit" name="submitcontactform">Submit</button>
     </div>
 
   </form>
