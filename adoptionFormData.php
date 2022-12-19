@@ -22,9 +22,15 @@ include('dbconnection.php');
         a:hover{
             color: white;
         }
+        h1{
+            margin-left: 90px;
+            margin-top: 50px;
+            
+        }
     </style>
 </head>
 <body>
+    <h1>1. Potential Parent Adoption Form Data:</h1>
     <!--ADOPTION FORM DATA TABLE-->
     <div class="container my-5">
         <table class="table">
@@ -100,7 +106,73 @@ include('dbconnection.php');
         </table>
     </div>
 
+
+
+
     <!--CONTACT FORM DATA TABLE-->
+
+    <!--CONTACT US FORM DATA TABLE-->
+    <h1>2. Potential Parent Contact Us Form Data:</h1>
+    <div class="container my-5">
+        <table class="table">
+            <thead class="table-dark">
+                <tr>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Message</th>
+                <th scope="col">#</th>
+                <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--PHP CODE TO DISPLAY DB DATA TO TABLE-->
+            <?php
+                $q = "SELECT * FROM `contactusform`";
+                $res  = mysqli_query($conn, $q); 
+
+                if($res){
+                    while($row=mysqli_fetch_assoc($res)){
+                        
+                        $fname = $row['First Name'];
+                        $lname = $row['Last Name'];
+                        $email = $row['Email'];
+                        $message = $row['Message'];
+                        $id = $row['Id'];
+
+                        echo'
+                        <tr>
+                            
+                            <td>'.$fname.'</td>
+                            <td>'.$lname.'</td>
+                            <td>'.$email.'</td>
+                            <td>'.$message.'</td>
+                            <th scope="row">'.$id.'</th>
+                            <td>
+                                <button class="btn btn-warning"><a class="text-light text-decoration-none" href="deleteform.php?deleteid='.$id.'">Delete</a></button>
+                            </td>
+                        </tr>
+                        ';
+                    }
+                }
+
+
+            ?>
+
+            <!-- <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+            </tr>-->
+            </tbody>
+        </table>
+    </div>
+    
+
 
 
     <div class="container">
