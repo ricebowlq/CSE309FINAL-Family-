@@ -7,38 +7,41 @@ include('dbconnection.php');
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>List of Children</title>
-    <!--BOOTSTRAP-->
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>List of Children</title>
+  <!--BOOTSTRAP-->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <link type="text/css"  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
+  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" />
 
-    <!--STYLESHEET-->
-    <link type="text/css"  rel="stylesheet" href="mystylesheet4.css" />
-    <!-- <link rel="stylesheet" href="child-adoptation-home.css"> -->
+  <!--STYLESHEET-->
+  <link type="text/css" rel="stylesheet" href="mystylesheet4.css" />
+  <!-- <link rel="stylesheet" href="child-adoptation-home.css"> -->
 
 
-    <style>
-      a{
-        color: white;
-      }
-      a:hover{
-        color: white;
-      }
-    </style>
-    
+  <style>
+    a {
+      color: white;
+    }
+
+    a:hover {
+      color: white;
+    }
+  </style>
+
 </head>
+
 <body>
   <header>
     <h1>Family+</h1>
   </header>
-<!-- <nav>
+  <!-- <nav>
     <div class="navbar">
       <i class='bx bx-menu'></i>
       <div class="logo"><a href="#">Family+</a></div>
@@ -71,20 +74,21 @@ include('dbconnection.php');
         <li><a href="sign-up.php" target="_blank"><i class="fas fa-user-plus"></i> SIGN UP</a></li>
       </div>
     </div> -->
-<div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
     <?php
-        include("dbconnection.php");
+    include("dbconnection.php");
 
-        $q = "SELECT * FROM childinfo";
-        $q_run = mysqli_query($conn, $q);
-        $check_childinfo = mysqli_num_rows($q_run) >0;
-
-        if($check_childinfo){
-            while($row = mysqli_fetch_array($q_run)){
-                ?>
-                <!-- <div class="col-md-3 cardcontainer">
+    $q = "SELECT * FROM childinfo";
+    $q_run = mysqli_query($conn, $q);
+    $check_childinfo = mysqli_num_rows($q_run) > 0;
+    // $row = mysqli_fetch_array($q_run);
+    // $id = $row['Id'];
+    if ($check_childinfo) {
+      while ($row = mysqli_fetch_array($q_run)) {
+    ?>
+        <!-- <div class="col-md-3 cardcontainer">
                     <div class="card h-100 w-100 link">
-                        <img src="childimages/<?php echo $row['Image']?>" class="card-img-top"
+                        <img src="childimages/<?php echo $row['Image'] ?>" class="card-img-top"
                         alt="Los Angeles Skyscrapers" />
                         <div class="card-body">
                             <h3 class="card-title"><?php echo $row['Name'];  ?></h3>
@@ -95,41 +99,40 @@ include('dbconnection.php');
                         </div>
                     </div>
                 </div> -->
-            
-                <div class="container">
-  <section class="mx-auto my-5 cont" style="max-width: 23rem;">
-      
-    <div class="card testimonial-card mt-2 mb-3">
-      <div class="card-up aqua-gradient"></div>
-      <div class="avatar mx-auto white">
-        <img src="childimages/<?php echo $row['Image']?>" class="rounded-circle img-fluid"
-          alt="woman avatar">
-      </div>
-      <div class="card-body text-center">
-        <h4 class="card-title font-weight-bold"><?php echo $row['Name'];  ?></h4>
-        <hr>
-        <p><i class="fas fa-quote-left"></i> <?php echo $row['Age'];  ?> years old</p>
-        <button class="btn btn-success"><a class="text-decoration-none viewbtn" href="displaySingleChild.php" >View Details</a></button>
-        <!-- <button class="btn btn-success" name="viewchildbtn" ><a href=" View Details"></a></button> -->
-      </div>
-    </div>
-    
-  </section>
-</div>
-                <?php
-                //echo $row['Name'];
-            }
-        }
-        else{
-            echo "No record found";
-        }
+
+        <div class="container">
+          <section class="mx-auto my-5 cont" style="max-width: 23rem;">
+
+            <div class="card testimonial-card mt-2 mb-3">
+              <div class="card-up aqua-gradient"></div>
+              <div class="avatar mx-auto white">
+                <img src="childimages/<?php echo $row['Image'] ?>" class="rounded-circle img-fluid" alt="woman avatar">
+              </div>
+              <div class="card-body text-center">
+                <h4 class="card-title font-weight-bold"><?php echo $row['Name'];  ?></h4>
+                <hr>
+                <p><i class="fas fa-quote-left"></i> <?php echo $row['Age'];  ?> years old</p>
+               
+                <button class="btn btn-success"><a class="text-decoration-none viewbtn" href="displaySingleChild.php">View Details</a></button>
+                <!-- <button class="btn btn-success" name="viewchildbtn" ><a href=" View Details"></a></button> -->
+              </div>
+            </div>
+
+          </section>
+        </div>
+    <?php
+        //echo $row['Name'];
+      }
+    } else {
+      echo "No record found";
+    }
 
 
     ?>
 
 
 
-  <!-- <div class="col">
+    <!-- <div class="col">
     <div class="card">
       <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top"
         alt="Hollywood Sign on The Hill" />
@@ -179,9 +182,10 @@ include('dbconnection.php');
       </div>
     </div> 
   </div>-->
-</div>
+  </div>
 
-<!-- EXPERIMENT -->
+  <!-- EXPERIMENT -->
 
 </body>
+
 </html>
