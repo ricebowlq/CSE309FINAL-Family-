@@ -132,7 +132,7 @@
    
 </body>
 </html>
-  <script src="mytutor-home.js"></script>
+  <script src="index.js"></script>
 
 </body>
 </html>

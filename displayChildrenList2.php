@@ -22,6 +22,7 @@ include('dbconnection.php');
 
   <!--STYLESHEET-->
   <link type="text/css" rel="stylesheet" href="mystylesheet4.css" />
+  <link type="text/css" rel="stylesheet" href="child-adoptation-home.css" />
   <!-- <link rel="stylesheet" href="child-adoptation-home.css"> -->
 
 
@@ -38,9 +39,45 @@ include('dbconnection.php');
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <h1>Family+</h1>
-  </header>
+  </header> -->
+  <nav>
+    <div class="navbar">
+      <i class='bx bx-menu'></i>
+      <div class="logo"><a href="#">Family+</a></div>
+      <div class="nav-links">
+        <div class="sidebar-logo">
+          <span class="logo-name">Family+</span>
+          <i class='bx bx-x' ></i>
+        </div>
+        <ul class="links">
+          <li><a href="child-adoptation-home.php">HOME</a></li>
+          <!-- <li><a href="#">PARENT'S HOME</a></li> -->
+          <li><a href="displayChildrenList2.php">CHILDREN LIST</a></li>
+          <!-- <li><a href="#">ORGANIZATIONS</a></li> -->
+          
+          <li><a href="Donationpage.php">DONATE</a></li>
+          <li><a href="#vdo">ABOUT US</a></li>
+          <li><a href="#c-us">CONTACT US</a></li>
+          
+
+        </ul>
+      </div>
+      <div class="search-box">
+        <i class='bx bx-search'></i>
+        <div class="input-box">
+          <input type="text" placeholder="Search...">
+        </div>
+      </div>
+      <div class="navbar-last">
+        <li><a href="adoptation-login.php" target="_blank"><i class="fas fa-user"></i>  LOG IN</a></li>
+        <li><a href="sign-up.php" target="_blank"><i class="fas fa-user-plus"></i> SIGN UP</a></li>
+      </div>
+      </div>
+
+    <!-- </div> -->
+  </nav>
   <!-- <nav>
     <div class="navbar">
       <i class='bx bx-menu'></i>
@@ -74,7 +111,12 @@ include('dbconnection.php');
         <li><a href="sign-up.php" target="_blank"><i class="fas fa-user-plus"></i> SIGN UP</a></li>
       </div>
     </div> -->
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <br>
+    <br>
+    <br>
+    <br>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4 listbox">
     <?php
     include("dbconnection.php");
 
@@ -186,6 +228,11 @@ include('dbconnection.php');
 
   <!-- EXPERIMENT -->
 
+
+  <script src="index.js"></script>
 </body>
 
 </html>
+
+
+
