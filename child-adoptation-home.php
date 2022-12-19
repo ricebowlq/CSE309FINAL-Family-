@@ -34,6 +34,13 @@ if(isset($_POST['submitcontactform'])){
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/fontawesome.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous"/>
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      nav{
+        position: fixed;
+      }
+    </style>
+   
    </head>
 <body>
   <nav>
@@ -70,7 +77,8 @@ if(isset($_POST['submitcontactform'])){
       </div>
     </div>
 
-  </div>
+    <!-- </div> -->
+  </nav>
 
   <div class="details-cont">
     <div class="txt-cont">

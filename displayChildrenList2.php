@@ -34,6 +34,10 @@ include('dbconnection.php');
     a:hover {
       color: white;
     }
+
+    nav{
+      position: fixed;
+    }
   </style>
 
 </head>
@@ -45,7 +49,7 @@ include('dbconnection.php');
   <nav>
     <div class="navbar">
       <i class='bx bx-menu'></i>
-      <div class="logo"><a href="#">Family+</a></div>
+      <div class="logo"><a href="child-adoptation-home.php">Family+</a></div>
       <div class="nav-links">
         <div class="sidebar-logo">
           <span class="logo-name">Family+</span>

@@ -10,7 +10,7 @@
 <nav>
     <div class="navbar">
       <i class='bx bx-menu'></i>
-      <div class="logo"><a href="#">Family+</a></div>
+      <div class="logo"><a href="child-adoptation-home.php">Family+</a></div>
       <div class="nav-links">
         <div class="sidebar-logo">
           <span class="logo-name">Family+</span>
@@ -41,7 +41,7 @@
       </div>
     </div>
 
-  </div>
+</nav>
 	<h2>You Can Donate Us In Three Ways</h2>
 	
 <div class="div-main"> 
